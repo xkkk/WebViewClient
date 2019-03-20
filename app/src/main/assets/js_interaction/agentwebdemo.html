@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <title>
+            js调用java
+        </title>
+        <script>
+
+        function showToast() {
+              // body...
+              console.log("call android"    )
+              alert("call android");
+              if(window.android!=null&&typeof(window.android)!="undefined"){
+                window.android.callAndroid("你好，Android! ");
+              }else{
+                 alert(typeof(window.android));
+              }
+          }
+
+        function showAlert() {
+              // body...
+              //console.log("call android")
+              if(window.android!=null&&typeof(window.android)!="undefined"){
+                window.android.alertMessage("你好，Android! ");
+              }else{
+                 alert(typeof(window.android));
+              }
+          }
+
+         function wakeupApp() {
+              // body...
+              //console.log("call android")
+              if(window.android!=null&&typeof(window.android)!="undefined"){
+                window.android.wakeUpAPP("com.taguxdesign.yixi","aaa");
+              }else{
+                 alert(typeof(window.android));
+              }
+          }
+
+          function getData(){
+           if(window.android!=null&&typeof(window.android)!="undefined"){
+                window.android.getData("http://wthrcdn.etouch.cn/weather_mini?city=北京","aaa","display");
+              }else{
+                 alert(typeof(window.android));
+              }
+          }
+
+          function display(message){
+                alert(message)
+                showElement("Js收到消息-->方法callByAndroidParam被调用,参数:"+message);
+          }
+
+    </script>
+    </head>
+
+    <body>
+        <p>
+            <input type="button"  value="显示Toast" onclick="showToast();" >
+        </p>
+        <p>
+            <input type="button"  value="显示弹窗" onclick="showAlert();" />
+        </p>
+        <p>
+            <input type="button"  value="打开App" onclick="wakeupApp();" />
+        </p>
+        <p>
+            <input type="button"  value="sayHello" onclick="sendHelloToAndroid();" />
+        </p>
+        <p>
+            <input type="button"  value="获取数据" onclick="getData();" />
+        </p>
+        <p>
+            <input type="button"  value="回显数据" onclick="sendHelloToAndroid();" />
+        </p>
+        <p>
+            <input type="file" value="打开文件" />
+        </p>
+
+    </body>
+</html>

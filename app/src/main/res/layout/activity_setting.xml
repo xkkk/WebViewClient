@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:titleTextColor="@android:color/white"
+        app:titleTextColor="@android:color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back"
+                android:background="@drawable/iv_back_selector"
+                android:scaleType="center"
+                android:clickable="true"
+                />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:text="设置"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/toolbar_skip"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="跳过"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/id_tv"
+                style="@style/setting_text"
+                android:text="启动页:" />
+
+            <ImageView
+                android:id="@+id/iv_splash"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/id_tv"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/id_tv"
+                android:background="@mipmap/id" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/id_tv2"
+                style="@style/setting_text"
+                android:text="启动页地址:" />
+
+            <EditText
+                android:id="@+id/et_splash_url"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/id_tv2"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:background="@drawable/et_bg"
+                android:hint="启动页图片从服务器获取"
+                android:paddingLeft="@dimen/dimen_5" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/id_tv3"
+                style="@style/setting_text"
+                android:text="主页地址:" />
+
+            <EditText
+                android:id="@+id/et_index"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/id_tv3"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:background="@drawable/et_bg"
+                android:hint="主页地址"
+                android:paddingLeft="@dimen/dimen_5" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/id_tv4"
+                style="@style/setting_text"
+                android:text="版本升级地址:" />
+
+            <EditText
+                android:id="@+id/et_version"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/id_tv4"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:background="@drawable/et_bg"
+                android:hint="更新版本下载地址"
+                android:paddingLeft="@dimen/dimen_5" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/id_tv5"
+                style="@style/setting_text"
+                android:text="标题栏颜色:" />
+
+            <EditText
+                android:id="@+id/et_toolbar_color"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/id_tv5"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:background="@drawable/et_bg"
+                android:hint="标题栏颜色"
+                android:paddingLeft="@dimen/dimen_5" />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/btn_shape"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

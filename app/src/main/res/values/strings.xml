@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AgentWeb</string>
+
+    <string name="downloadPermissionTip">下载需要读写外部存储卡的权限，请先设置</string>
+    <string name="cameraPermissionTip">上传头像需要拍照和存储卡的权限，请先设置</string>
+    <string name="qrCodePermissionTip">扫描二维码需要打开相机和散光灯的权限,请先设置</string>
+    <string name="voicePermissionTip">录音需要录音和存储卡的权限,请先设置</string>
+    <string name="videoPermissionTip">视频需要摄像头和存储卡的权限,请先设置</string>
+    <string name="cancel">取消</string>
+    <string name="cut">剪切</string>
+    <string name="goSetting">设置</string>
+    <string name="takePicPermissionTip">拍照需要相机权限</string>
+    <string name="choosePicPermissionTip">选取图片需要读取存储卡的权限</string>
+</resources>

@@ -18,7 +18,6 @@ import android.widget.TextView;
 import com.just.agentweb.AgentWebConfig;
 import com.zwj.agentweb.R;
 import com.zwj.agentweb.http.GuideItemEntity;
-import com.zwj.agentweb.web.SingleWebActivity;
 
 import static com.zwj.agentweb.web.sonic.SonicJavaScriptInterface.PARAM_CLICK_TIME;
 

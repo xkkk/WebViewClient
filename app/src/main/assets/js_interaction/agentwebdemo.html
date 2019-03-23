@@ -1,10 +1,44 @@
 <html>
-    <head>
-        <meta content="text/html; charset=utf-8" http-equiv="content-type">
-        <title>
-            js调用java
-        </title>
-        <script>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>
+        js调用java
+    </title>
+
+</head>
+
+<body>
+<p>
+    <input type="button" value="显示Toast" onclick="showToast();">
+</p>
+<p>
+    <input type="button" value="显示弹窗" onclick="showAlert();"/>
+</p>
+<p>
+    <input type="button" value="打开App" onclick="wakeupApp();"/>
+</p>
+<p>
+    <input type="button" value="标题" onclick="setTitle();"/>
+</p>
+<p>
+    <input type="button" value="隐藏标题栏" onclick="hideTitleBar();"/>
+</p>
+<p>
+    <input type="button" value="显示标题栏" onclick="showTitleBar();"/>
+</p>
+<p>
+    <input type="button" value="设置标题颜色" onclick="setTitleColor();"/>
+</p>
+<p>
+    <input type="button" value="获取数据" onclick="getData();"/>
+</p>
+<p>
+    <input type="button" value="回显数据" onclick="sendHelloToAndroid();"/>
+</p>
+<p>
+    <input type="file" value="打开文件"/>
+</p>
+<script>
 
         function showToast() {
               // body...
@@ -44,37 +78,44 @@
                  alert(typeof(window.android));
               }
           }
+         function setTitle(){
+           if(window.layout!=null&&typeof(window.layout)!="undefined"){
+                window.layout.isTitleBarShowing(function(responseData) {
+                    document.getElementById("show").innerHTML = "send get responseData from java, data = " + responseData
+                });
+              }else{
+                 alert(typeof(window.layout));
+              }
+          }
+
+          function hideTitleBar(){
+          if(window.layout!=null&&typeof(window.layout)!="undefined"){
+                window.layout.hideTitleBar();
+              }else{
+                 alert(typeof(window.layout));
+              }
+          }
+          function showTitleBar(){
+          if(window.layout!=null&&typeof(window.layout)!="undefined"){
+                window.layout.showTitleBar();
+              }else{
+                 alert(typeof(window.layout));
+              }
+          }
+          function setTitleColor(){
+          if(window.layout!=null&&typeof(window.layout)!="undefined"){
+                window.layout.setTitleColor("#000000");
+              }else{
+                 alert(typeof(window.layout));
+              }
+          }
 
           function display(message){
                 alert(message)
                 showElement("Js收到消息-->方法callByAndroidParam被调用,参数:"+message);
           }
 
+
     </script>
-    </head>
-
-    <body>
-        <p>
-            <input type="button"  value="显示Toast" onclick="showToast();" >
-        </p>
-        <p>
-            <input type="button"  value="显示弹窗" onclick="showAlert();" />
-        </p>
-        <p>
-            <input type="button"  value="打开App" onclick="wakeupApp();" />
-        </p>
-        <p>
-            <input type="button"  value="sayHello" onclick="sendHelloToAndroid();" />
-        </p>
-        <p>
-            <input type="button"  value="获取数据" onclick="getData();" />
-        </p>
-        <p>
-            <input type="button"  value="回显数据" onclick="sendHelloToAndroid();" />
-        </p>
-        <p>
-            <input type="file" value="打开文件" />
-        </p>
-
-    </body>
+</body>
 </html>

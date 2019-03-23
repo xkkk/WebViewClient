@@ -1,4 +1,4 @@
-package com.zwj.agentweb.web;
+package com.zwj.agentweb.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,13 @@ import android.view.KeyEvent;
 import android.widget.FrameLayout;
 
 import com.zwj.agentweb.R;
+import com.zwj.agentweb.web.AgentWebFragment;
+import com.zwj.agentweb.web.FragmentKeyDown;
+import com.zwj.agentweb.web.JsbridgeWebFragment;
 
 import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_FILE_DOWNLOAD;
 import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_INPUT_TAG_PROBLEM;
+import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE;
 import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_JS_JAVA_COMUNICATION_UPLOAD_FILE;
 import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_LINKS;
 import static com.zwj.agentweb.activity.MainActivity.FLAG_GUIDE_DICTIONARY_MAP;
@@ -80,7 +84,10 @@ public class SingleWebActivity extends AppCompatActivity {
                 ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
                 mBundle.putString(AgentWebFragment.URL_KEY, "file:///android_asset/sms/sms.html");
                 break;
-
+            case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE:
+                ft.add(R.id.container_framelayout,mAgentWebFragment = JsbridgeWebFragment.getInstance(mBundle = new Bundle()), JsbridgeWebFragment.class.getName());
+                mBundle.putString(JsbridgeWebFragment.URL_KEY, "file:///android_asset/jsbridge/demo.html");
+                break;
             /*地图*/
             case FLAG_GUIDE_DICTIONARY_MAP:
                 ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());

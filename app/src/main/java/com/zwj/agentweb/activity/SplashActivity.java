@@ -11,6 +11,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -39,6 +40,12 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
+
+    public void skip(View view){
+        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+        finish();
+    }
+
     private Handler mHandle = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -48,4 +55,11 @@ public class SplashActivity extends AppCompatActivity {
         }
     };
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHandle.removeCallbacksAndMessages(null);
+        mHandle = null;
+    }
 }

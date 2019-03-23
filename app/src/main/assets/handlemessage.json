@@ -1,0 +1,10 @@
+{
+  "handleName": "submitFromWeb",
+  "handleMethod": "getData",//Native方法名
+  "params": {//参数
+    "api_url": "",//接口地址
+    "api_params": {},//接口参数
+    "api_method": "GET",//接口请求方式
+    "api_header": {}//header
+  }
+}

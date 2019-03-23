@@ -1,0 +1,10 @@
+{
+  "splash": {
+    "url": "www.baidu.com",
+    "duration": 3000
+  },
+  "toolBar": {
+    "display": true,
+    "color": "#3F51B5"
+  }
+}

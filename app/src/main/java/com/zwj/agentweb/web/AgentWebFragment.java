@@ -101,6 +101,7 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
         LogUtils.i(TAG,"3.5、创建AgentWeb");
 
         mAgentWeb.getJsInterfaceHolder().addJavaObject("android",new AndroidInterface(mAgentWeb,getActivity()));
+        mAgentWeb.getJsInterfaceHolder().addJavaObject("layout",new LayoutInterface(mAgentWeb,getActivity()));
 //        mAgentWeb.getJsInterfaceHolder().addJavaObject("sonic", new SonicJavaScriptInterface(mSonicImpl.getSonicSessionClient(), new Intent().putExtra(PARAM_CLICK_TIME,getArguments().getLong(PARAM_CLICK_TIME)).putExtra("loadUrlTime", System.currentTimeMillis())));
         LogUtils.i(TAG,"4、注入JavaScriptInterface");
         AgentWebConfig.debug();

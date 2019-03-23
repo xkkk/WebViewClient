@@ -42,6 +42,9 @@ public class AndroidInterface {
     }
 
 
+
+
+
     /**
      * h5页面返回
      */
@@ -68,7 +71,6 @@ public class AndroidInterface {
             }
         });
     }
-
 
     /**
      * web 点击唤醒本地应用链接
@@ -169,13 +171,5 @@ public class AndroidInterface {
     }
 
 
-    public class LayoutInterface{
-
-        @JavascriptInterface
-        public  void hideNavigo(){
-
-        }
-
-    }
 
 }

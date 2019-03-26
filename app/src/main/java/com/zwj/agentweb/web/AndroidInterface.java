@@ -1,6 +1,7 @@
 package com.zwj.agentweb.web;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.just.agentweb.AgentWeb;
 import com.just.agentweb.LogUtils;
 import com.zwj.agentweb.BuildConfig;
 import com.zwj.agentweb.CustomApplication;
+import com.zwj.agentweb.activity.ScanActivity;
 import com.zwj.agentweb.base.AppConstant;
 import com.zwj.agentweb.http.HttpManager;
 import com.zwj.agentweb.util.CommonUtils;
@@ -149,10 +151,21 @@ public class AndroidInterface {
 
 
     @JavascriptInterface
+    public void goToScan(){
+        Intent intent = new Intent(context, ScanActivity.class);
+        context.startActivity(intent);
+    }
+
+    @JavascriptInterface
+    public void goUrl(String url){
+        agent.getUrlLoader().loadUrl(url);
+    }
+
+
+    @JavascriptInterface
     public void getSystemInfo(){
         String packageName = BuildConfig.APPLICATION_ID;
     }
-
 
     /**
      * 打开手机默认浏览器

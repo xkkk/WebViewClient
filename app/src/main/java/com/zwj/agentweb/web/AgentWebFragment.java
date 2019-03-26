@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.GeolocationPermissions;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -179,6 +182,32 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
     protected WebChromeClient mWebChromeClient = new WebChromeClient() {
 
         @Override
+        public void onGeolocationPermissionsShowPrompt(final String origin, final GeolocationPermissions.Callback callback) {
+            final boolean remember = true;
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("位置信息");
+            builder.setMessage(origin + "允许获取您的位置信息吗？").setCancelable(true).setPositiveButton("允许",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                            int id) {
+                            callback.invoke(origin, true, remember);
+                        }
+                    })
+                    .setNegativeButton("不允许",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int id) {
+                                    callback.invoke(origin, false, remember);
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            super.onGeolocationPermissionsShowPrompt(origin,callback);
+        }
+
+        @Override
         public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
             return super.onJsAlert(view, url, message, result);
         }
@@ -199,6 +228,7 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
             }
             mTitleTextView.setText(title);
         }
+
     };
 
 
@@ -231,11 +261,14 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
             //intent:// scheme的处理 如果返回false ， 则交给 DefaultWebClient 处理 ， 默认会打开该Activity  ， 如果Activity不存在则跳到应用市场上去.  true 表示拦截
             //例如优酷视频播放 ，intent://play?...package=com.youku.phone;end;
             //优酷想唤起自己应用播放该视频 ， 下面拦截地址返回 true  则会在应用内 H5 播放 ，禁止优酷唤起播放该视频， 如果返回 false ， DefaultWebClient  会根据intent 协议处理 该地址 ， 首先匹配该应用存不存在 ，如果存在 ， 唤起该应用播放 ， 如果不存在 ， 则跳到应用市场下载该应用 .
-            if (url.startsWith("intent://") && url.contains("com.youku.phone")) {
-                return true;
+//            if (url.startsWith("intent://") && url.contains("com.youku.phone")) {
+//                return true;
+//            }
+//            return false;
+            if(!TextUtils.isEmpty(url)){
+                view.loadUrl(url);
             }
-
-            return false;
+            return true;
         }
 
         @Override
@@ -422,7 +455,8 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
 
                     return true;
                 case R.id.setting:
-                    startActivity(new Intent(getActivity(), SettingActivity.class));
+//                    startActivity(new Intent(getActivity(), SettingActivity.class));
+                    loadSettingWeb();
                     return true;
                 default:
                     return false;
@@ -450,6 +484,11 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
 
     }
 
+    private void loadSettingWeb(){
+        if (mAgentWeb != null) {
+            mAgentWeb.getUrlLoader().loadUrl("file:///android_asset/js_interaction/agentwebdemo.html");
+        }
+    }
 
     /**
      * 测试错误页的显示

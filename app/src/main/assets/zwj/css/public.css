@@ -1,0 +1,120 @@
+.cme-main .hsplit20 {
+  height: 0.4266666666666667rem;
+}
+.cme-main .hsplit89 {
+  height: 1.8986666666666667rem;
+}
+.cme-main .hsplit109 {
+  height: 2.3253333333333335rem;
+}
+.cme-main .hsplit120 {
+  height: 2.56rem;
+}
+.cme-main .hsplit197 {
+  height: 4.2026666666666666rem;
+}
+/*顶部导航栏   开始 */
+.cme-header {
+  width: 100%;
+  height: 1.8773333333333333rem;
+  line-height: 1.8773333333333333rem;
+  text-align: center;
+  font-size: 0.768rem;
+  background: #d71516;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.cme-header .header-left a {
+  font-size: 0.5973333333333334rem;
+  color: #4c9dfb;
+  position: absolute;
+  left: 0.4266666666666667rem;
+  top: 0.10666666666666667rem;
+}
+.cme-header .header-left a img {
+  width: 0.3626666666666667rem;
+  height: 0.6613333333333333rem;
+}
+.cme-header .header-right a {
+  font-size: 0.5973333333333334rem;
+  color: #4c9dfb;
+  position: absolute;
+  right: 0.4266666666666667rem;
+  top: 0;
+}
+.cme-header .header-right a .header-icon {
+  width: 0.3626666666666667rem;
+  height: 0.4266666666666667rem;
+  font-size: 0.768rem;
+}
+.cme-header span {
+  color: #fff;
+}
+/*顶部导航栏   结束 */
+/*底部操作栏  开始 */
+.cme-nav {
+  width: 100%;
+  height: 2.0906666666666665rem;
+  color: #666;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+}
+.cme-nav li {
+  float: left;
+  padding-bottom: 0.128rem;
+  width: 25%;
+  font-size: 0.4266666666666667rem;
+  text-align: center;
+}
+.cme-nav li .nav-icon {
+  display: block;
+  padding-top: 0.32rem;
+}
+.cme-nav li .nav-icon .icon-img {
+  width: 0.8533333333333334rem;
+  height: 0.8533333333333334rem;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 0.10666666666666667rem;
+}
+.cme-nav li .nav-icon .icon-img.todo {
+  background: url(../images/icons/nav_icon01.png) no-repeat center;
+  background-size: 0.8106666666666666rem 0.8106666666666666rem;
+}
+.cme-nav li .nav-icon .icon-img.product {
+  background: url(../images/icons/nav_icon02.png) no-repeat center;
+  background-size: 0.8106666666666666rem 0.8533333333333334rem;
+}
+.cme-nav li .nav-icon .icon-img.table {
+  background: url(../images/icons/nav_icon03.png) no-repeat center;
+  background-size: 0.8533333333333334rem 0.8533333333333334rem;
+}
+.cme-nav li .nav-icon .icon-img.manage {
+  background: url(../images/icons/nav_icon04.png) no-repeat center;
+  background-size: 0.8533333333333334rem 0.8533333333333334rem;
+}
+.cme-nav li .nav-icon.curr {
+  color: #d71516;
+}
+.cme-nav li .nav-icon.curr .icon-img.todo {
+  background: url(../images/icons/nav_icon01_curr.png) no-repeat center;
+  background-size: 0.8106666666666666rem 0.8106666666666666rem;
+}
+.cme-nav li .nav-icon.curr .icon-img.product {
+  background: url(../images/icons/nav_icon02_curr.png) no-repeat center;
+  background-size: 0.8106666666666666rem 0.8533333333333334rem;
+}
+.cme-nav li .nav-icon.curr .icon-img.table {
+  background: url(../images/icons/nav_icon03_curr.png) no-repeat center;
+  background-size: 0.8533333333333334rem 0.8533333333333334rem;
+}
+.cme-nav li .nav-icon.curr .icon-img.manage {
+  background: url(../images/icons/nav_icon04_curr.png) no-repeat center;
+  background-size: 0.8533333333333334rem 0.8533333333333334rem;
+}
+/*底部操作栏   结束 */

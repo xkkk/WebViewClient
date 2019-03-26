@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 	public static final int FLAG_GUIDE_DICTIONARY_LINKAGE_WITH_TOOLBAR = FLAG_GUIDE_DICTIONARY_VASSONIC_SAMPLE << 1;
 	public static final int FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW = FLAG_GUIDE_DICTIONARY_LINKAGE_WITH_TOOLBAR << 1;
 	public static final int FLAG_GUIDE_DICTIONARY_JS_JAVA_COMUNICATION_UPLOAD_FILE = FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW << 1;
+	public static final int FLAG_GUIDE_DICTIONARY_MAIN = FLAG_GUIDE_DICTIONARY_JS_JAVA_COMUNICATION_UPLOAD_FILE << 1;
 	public static final GuideItemEntity[] datas = new GuideItemEntity[]{
 //			new GuideItemEntity("Activity 使用 AgentWeb", FLAG_GUIDE_DICTIONARY_USE_IN_ACTIVITY),
 			new GuideItemEntity("AgentWeb ", FLAG_GUIDE_DICTIONARY_USE_IN_FRAGMENT),

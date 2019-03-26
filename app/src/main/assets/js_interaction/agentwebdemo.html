@@ -9,6 +9,12 @@
 
 <body>
 <p>
+    <input type="button" value="通过Native打开一个新的页面" onclick="goUrl();">
+</p>
+<p>
+    <input type="button" value="扫码" onclick="scan();">
+</p>
+<p>
     <input type="button" value="显示Toast" onclick="showToast();">
 </p>
 <p>
@@ -40,10 +46,27 @@
 </p>
 <script>
 
+
+        function scan(){
+         if(window.android!=null&&typeof(window.android)!="undefined"){
+            window.android.goToScan();
+         }else{
+                 alert(typeof(window.android));
+              }
+        }
+
+        function goUrl(){
+         if(window.android!=null&&typeof(window.android)!="undefined"){
+                window.android.goUrl("https://www.baidu.com");
+              }else{
+                 alert(typeof(window.android));
+              }
+        }
+
         function showToast() {
               // body...
-              console.log("call android"    )
-              alert("call android");
+              <!--console.log("call android"    )-->
+              <!--alert("call android");-->
               if(window.android!=null&&typeof(window.android)!="undefined"){
                 window.android.callAndroid("你好，Android! ");
               }else{
@@ -116,6 +139,7 @@
           }
 
 
-    </script>
+
+</script>
 </body>
 </html>

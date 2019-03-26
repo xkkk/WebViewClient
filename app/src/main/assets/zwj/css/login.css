@@ -1,0 +1,95 @@
+body {
+  background: #ffffff url(../images/login_bg.png) no-repeat;
+  background-size: 100%;
+}
+.cme-main .logo {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.9813333333333333rem;
+  color: #1870b8;
+}
+.cme-main .logo img {
+  width: 4.394666666666667rem;
+  height: 4.394666666666667rem;
+  padding-top: 3.2rem;
+  padding-bottom: 1.7066666666666668rem;
+}
+.cme-main .form-box {
+  width: 86%;
+  margin: 0 auto;
+}
+.cme-main .form-box .icon-user {
+  background: url(../images/icons/icon_user.png) no-repeat 0.32rem center;
+  background-size: 0.7253333333333334rem 0.768rem;
+}
+.cme-main .form-box .icon-password {
+  background: url(../images/icons/icon_password.png) no-repeat 0.3626666666666667rem center;
+  background-size: 0.64rem 0.8106666666666666rem;
+}
+.cme-main .form-box .row {
+  width: 100%;
+}
+.cme-main .form-box .row .form {
+  width: 100%;
+  border-bottom: 1px solid  #e5e5e5;
+  height: 2.24rem;
+  overflow: hidden;
+  position: relative;
+}
+.cme-main .form-box .row .form .line {
+  position: absolute;
+  left: 1.6rem;
+  bottom: 0.64rem;
+  border-left: 1px solid #ddd;
+}
+.cme-main .form-box .row .form input {
+  position: absolute;
+  left: 1.8133333333333332rem;
+  bottom: 0.64rem;
+  width: 100%;
+  border: 0 none;
+  font-size: 0.5973333333333334rem;
+  height: 0.8533333333333334rem;
+  background: none;
+  outline: none;
+  color: #bbb;
+}
+.cme-main .form-box .row .icon-eyes.curr {
+  position: absolute;
+  right: 0.4266666666666667rem;
+  bottom: 0.32rem;
+  background: url(../images/icons/icon_eyeclose.png) no-repeat;
+  background-size: 0.576rem 0.2986666666666667rem;
+  width: 0.6826666666666666rem;
+}
+.cme-main .form-box .btn-login {
+  background: #d61518;
+  height: 1.7066666666666668rem;
+  line-height: 1.7066666666666668rem;
+  border-radius: 0.10666666666666667rem;
+  text-align: center;
+  margin-top: 1.28rem;
+}
+.cme-main .form-box .btn-login a {
+  width: 100%;
+  display: inline-block;
+  font-size: 0.6826666666666666rem;
+  color: #fff;
+}
+.cme-main .form-box .link {
+  margin-top: 0.64rem;
+  font-size: 0.512rem;
+}
+.cme-main .form-box .link a {
+  color: #333;
+}
+.cme-main .form-box .link .auto {
+  background: url(../images/icons/icon_checkbox.png) no-repeat left center;
+  background-size: 0.512rem;
+  padding-left: 0.6826666666666666rem;
+}
+.cme-main .form-box .link .auto.curr {
+  background: url(../images/icons/icon_checkbox_on.png) no-repeat left center;
+  background-size: 0.512rem;
+}

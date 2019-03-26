@@ -19,6 +19,7 @@ import com.zwj.agentweb.R;
 import com.zwj.agentweb.base.AppConstant;
 import com.zwj.agentweb.util.SharedPreferencesUtil;
 
+
 public class SplashActivity extends AppCompatActivity {
     private ImageView imageView;
     private SharedPreferencesUtil sp;
@@ -42,7 +43,12 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public void skip(View view){
-        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+        if (!TextUtils.isEmpty(AppConstant.BASE_H5_URL)) {
+            startActivity(new Intent(SplashActivity.this,SingleWebActivity.class));
+        }else{
+            startActivity(new Intent(SplashActivity.this,MainActivity.class));
+        }
+
         finish();
     }
 
@@ -50,7 +56,12 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            startActivity(new Intent(SplashActivity.this,MainActivity.class));
+            if (!TextUtils.isEmpty(AppConstant.BASE_H5_URL)) {
+                startActivity(new Intent(SplashActivity.this,SingleWebActivity.class));
+            }else{
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+            }
+
             finish();
         }
     };

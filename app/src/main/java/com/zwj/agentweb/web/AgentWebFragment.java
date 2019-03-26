@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -45,8 +46,8 @@ import com.just.agentweb.PermissionInterceptor;
 import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
 import com.zwj.agentweb.R;
-import com.zwj.agentweb.activity.SettingActivity;
 import com.zwj.agentweb.adapter.AgentWebDownloadListenerAdapter;
+import com.zwj.agentweb.base.AppConstant;
 import com.zwj.agentweb.web.sonic.SonicImpl;
 
 import java.util.HashMap;
@@ -109,7 +110,16 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
         LogUtils.i(TAG,"4、注入JavaScriptInterface");
         AgentWebConfig.debug();
 
+
+        if(AppConstant.hasNavi.equals("true")){
+            Toolbar toolbar = view.findViewById(R.id.toolbar);
+            toolbar.setVisibility(View.VISIBLE);
+        }else{
+            Toolbar toolbar = view.findViewById(R.id.toolbar);
+            toolbar.setVisibility(View.GONE);
+        }
         initView(view);
+
 
         // AgentWeb 4.0 开始，删除该类以及删除相关的API
 //        DefaultMsgConfig.DownloadMsgConfig mDownloadMsgConfig = mAgentWeb.getDefaultMsgConfig().getDownloadMsgConfig();

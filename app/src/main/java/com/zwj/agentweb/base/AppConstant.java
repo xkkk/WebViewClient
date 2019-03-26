@@ -14,6 +14,9 @@ public interface AppConstant {
 
     String BASE_URL = AppStringUtils.getConfigProperties("URL_API");  // 接口地址
     String BASE_H5_URL = AppStringUtils.getConfigProperties("URL_H5");  // h5地址
+    String isDemo = AppStringUtils.getConfigProperties("isDemo");
+    String hasNavi = AppStringUtils.getConfigProperties("hasNavi");
+
 
     String MAIN_INDEX = "/index.htm";
 

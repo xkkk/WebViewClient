@@ -43,7 +43,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public void skip(View view){
-        if (!TextUtils.isEmpty(AppConstant.BASE_H5_URL)) {
+        String url = AppConstant.BASE_H5_URL;
+        String isDemo = AppConstant.isDemo;
+        if ("false".equals(isDemo)&&!TextUtils.isEmpty(url)) {
             startActivity(new Intent(SplashActivity.this,SingleWebActivity.class));
         }else{
             startActivity(new Intent(SplashActivity.this,MainActivity.class));

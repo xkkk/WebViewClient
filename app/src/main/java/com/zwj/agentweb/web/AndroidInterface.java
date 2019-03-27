@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 
@@ -94,6 +95,25 @@ public class AndroidInterface {
      * 显示弹窗
      */
     @JavascriptInterface
+    public void alertMessage(final String message, final String callback) {
+        deliver.post(new Runnable() {
+            @Override
+            public void run() {
+                CommonDialogUtils.showOnlyConfirmDialog(context, message, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(!TextUtils.isEmpty(callback)) {
+                            agent.getJsAccessEntrace().quickCallJs(callback, "");
+                        }
+                    }
+                });
+            }
+        });
+    }
+    /**
+     * 显示弹窗
+     */
+    @JavascriptInterface
     public void alertMessage(final String message) {
         deliver.post(new Runnable() {
             @Override
@@ -101,7 +121,7 @@ public class AndroidInterface {
                 CommonDialogUtils.showOnlyConfirmDialog(context, message, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        agent.getJsAccessEntrace().quickCallJs("display","come on");
+
                     }
                 });
             }

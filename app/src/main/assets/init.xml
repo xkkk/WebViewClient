@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application>
+    <package>com.zwj.agentweb</package>
+    <activity>
+        <name>SplashActivity</name>
+        <toolbar display="false"/>
+        <background>mipmap-xxxhdpi/avatar.jpg</background>
+        <duration>3000</duration>
+    </activity>
+    <activity>
+        <name>MainActivity</name>
+        <toolbar display="true">
+            <textColor>#ffffff</textColor>
+            <back>true</back>
+            <more display="false">
+            </more>
+        </toolbar>
+    </activity>
+    <activity>
+        <name>SingleWebActivity</name>
+        <toolbar display="true">
+            <textColor>#ffffff</textColor>
+            <back>true</back>
+            <more display="false">
+                <menu>设置</menu>
+                <menu>刷新当前页面</menu>
+            </more>
+        </toolbar>
+    </activity>
+</application>

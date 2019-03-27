@@ -7,6 +7,7 @@
     <string name="voicePermissionTip">录音需要录音和存储卡的权限,请先设置</string>
     <string name="videoPermissionTip">视频需要摄像头和存储卡的权限,请先设置</string>
     <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
     <string name="cut">剪切</string>
     <string name="goSetting">设置</string>
     <string name="takePicPermissionTip">拍照需要相机权限</string>

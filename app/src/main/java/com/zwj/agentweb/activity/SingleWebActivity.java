@@ -117,7 +117,7 @@ public class SingleWebActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //一定要保证 mAentWebFragemnt 回调
-//		mAgentWebFragment.onActivityResult(requestCode, resultCode, data);
+		mAgentWebFragment.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

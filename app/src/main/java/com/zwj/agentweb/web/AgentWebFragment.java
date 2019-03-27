@@ -48,9 +48,12 @@ import com.just.agentweb.download.DefaultDownloadImpl;
 import com.zwj.agentweb.R;
 import com.zwj.agentweb.adapter.AgentWebDownloadListenerAdapter;
 import com.zwj.agentweb.base.AppConstant;
+import com.zwj.agentweb.util.UiUtil;
 import com.zwj.agentweb.web.sonic.SonicImpl;
 
 import java.util.HashMap;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class AgentWebFragment extends Fragment  implements View.OnClickListener,FragmentKeyDown{
@@ -506,6 +509,19 @@ public class AgentWebFragment extends Fragment  implements View.OnClickListener,
         if (mAgentWeb != null) {
             mAgentWeb.getUrlLoader().loadUrl("http://www.unkownwebsiteblog.me");
         }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+                         if (requestCode == 666) {
+                                String result = data.getStringExtra("result");
+                                //设置结果显示框的显示数值
+//                                 a.setText(String.valueOf(three));
+                             UiUtil.showToast(getActivity(),result);
+                             mAgentWeb.getJsAccessEntrace().quickCallJs("display",result);
+                            }
     }
 
     /**

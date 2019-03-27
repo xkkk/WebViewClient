@@ -1,6 +1,7 @@
 package com.zwj.agentweb.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
@@ -49,11 +50,15 @@ public class ScanActivity extends AppCompatActivity implements QRCodeView.Delega
     @Override
     public void onScanQRCodeSuccess(String result) {
         //扫描成功后调用震动器
-        vibrator();
+//        vibrator();
         //显示扫描结果
-        UiUtil.showToast(this,result);
+//        UiUtil.showToast(this,result);
         //再次延时1.5秒后启动
-        zXingView.startSpot();
+//        zXingView.startSpot();
+        Intent intent = new Intent();
+        intent.putExtra("result",result);
+        setResult(666,intent);
+        finish();
     }
 
     @Override
@@ -73,6 +78,6 @@ public class ScanActivity extends AppCompatActivity implements QRCodeView.Delega
         if (requestCode == REQUEST_CODE_CAMERA) {
             zXingView.startCamera();
             zXingView.startSpot();
-    }
+        }
     }
 }

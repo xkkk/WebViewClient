@@ -173,7 +173,7 @@ public class AndroidInterface {
     @JavascriptInterface
     public void goToScan(){
         Intent intent = new Intent(context, ScanActivity.class);
-        context.startActivity(intent);
+        context.startActivityForResult(intent,666);
     }
 
     @JavascriptInterface
